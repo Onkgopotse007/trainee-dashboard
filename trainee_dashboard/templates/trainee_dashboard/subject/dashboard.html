@@ -1,0 +1,49 @@
+{% extends 'edc_subject_dashboard/dashboard.html' %}
+{% load edc_visit_schedule_extras %}
+{% load edc_subject_dashboard_extras %}
+
+{% load static %}
+
+{% block extra-css %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'trainee_dashboard/css/trainee_dashboard.css' %}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
+{% endblock extra-css %}
+
+
+
+{% block locator_information %}{% endblock locator_information %}
+
+{% block top_bar %}
+
+    {% include "trainee_dashboard/subject/dashboard/top_bar.html" %}
+
+{% endblock top_bar %}
+
+{% block appointments %}
+	{% include "trainee_dashboard/subject/dashboard/appointments.html" %}
+{% endblock appointments %}
+
+
+{% block side_bar %}
+
+  {% block demographics %}   
+	
+      {% include 'trainee_dashboard/subject/dashboard/sidebar.html' %}
+
+  {% endblock demographics %}
+	
+	{% if locator_obj %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h6 class="panel-title">
+              <i class="fa fa-info-circle fa-lg fa-fw"></i> Locator Info
+          </h6>
+      </div>
+      
+        {% include 'trainee_dashboard/subject/dashboard/locator_info.html' %}   
+  	</div>
+  	{% endif %}
+	
+{% endblock side_bar %}

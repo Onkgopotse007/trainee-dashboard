@@ -1,0 +1,22 @@
+.default {
+	background-color: #1183ca;
+
+	}
+
+.past {
+	background-color:  rgb(255, 83, 109);
+	}
+
+.on_time {
+	background-color: rgb(255, 185, 96);
+
+	}
+
+.early {
+	background-color: rgb(116, 182, 102);
+
+	}
+	
+.dash-btn {
+	color: #ffffff;
+}
